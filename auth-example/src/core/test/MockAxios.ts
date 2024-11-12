@@ -24,6 +24,7 @@ export class MockAxios implements IMockAxios {
     }
 
     private mockAdapter = new MockAdapter(axios);
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     private constructor() {}
 
     public get getRequestHistory(): AxiosRequestConfig[] {

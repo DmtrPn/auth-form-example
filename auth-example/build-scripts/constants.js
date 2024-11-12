@@ -1,7 +1,7 @@
 const path = require('path');
 
 const ROOT_DIR = path.resolve(__dirname, '../');
-const PUBLIC_PATH = path.resolve(ROOT_DIR, './public');
+const PUBLIC_PATH = path.resolve(ROOT_DIR, '../docs');
 const ASSETS_PATH = path.resolve(ROOT_DIR, 'assets');
 const STATIC_PATH = path.resolve(PUBLIC_PATH, 'static');
 const FONTS_PATH = path.resolve(STATIC_PATH, 'fonts');
