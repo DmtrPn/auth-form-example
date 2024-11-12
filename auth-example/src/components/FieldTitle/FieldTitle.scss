@@ -1,0 +1,46 @@
+@import '../mixins/mixin';
+@import '../mixins/commonStyles';
+
+.root {
+    padding-bottom: 8px;
+
+    color: $FontColor;
+
+    font-size: 14px;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.withPadding {
+    padding-bottom: 8px;
+}
+
+.withoutPadding {
+    padding: 0;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.valid {
+    color: $FontColor;
+}
+
+.notValid {
+    color: $Red;
+}
+
+.withCaption {
+    width: auto;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.inheritColor {
+    color: inherit;
+}

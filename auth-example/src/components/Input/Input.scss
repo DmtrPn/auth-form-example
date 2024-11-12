@@ -1,0 +1,44 @@
+@import '../mixins/mixin';
+
+.root {
+    position: relative;
+
+    width: 100%;
+
+    &:hover {
+        .input {
+            border-color: $Grey;
+        }
+    }
+
+    &.active {
+        .input {
+            border-color: $Grey;
+        }
+    }
+}
+
+.input {
+    width: inherit;
+    height: inherit;
+    padding: 6px 8px;
+
+    text-align: inherit;
+    text-overflow: ellipsis;
+
+    color: $FontColor;
+    border: 1px solid $GreyBorder;
+    border-radius: 12px;
+    outline: 0;
+
+    font-size: inherit;
+    font-style: normal;
+
+    &::placeholder {
+        color: $Grey;
+    }
+}
+
+.input:disabled {
+    box-shadow: none;
+}

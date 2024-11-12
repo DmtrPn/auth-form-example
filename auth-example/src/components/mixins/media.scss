@@ -1,0 +1,27 @@
+// desktop
+@mixin media-xl {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+
+// notebook
+@mixin media-l {
+    @media screen and (max-width: 1280px) {
+        @content;
+    }
+}
+
+// ipad
+@mixin media-m {
+    @media screen and (max-width: 1024px) {
+        @content;
+    }
+}
+
+// mobile
+@mixin media-s {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}

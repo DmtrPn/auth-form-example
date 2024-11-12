@@ -1,0 +1,52 @@
+@import '../../mixins/mixin';
+
+.root {
+    display: inline-block;
+
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+
+    cursor: pointer;
+
+    color: $Grey;
+    border: 1px solid #ebecee;
+    border-radius: 50%;
+    background: #ffffff;
+
+    &:hover {
+        color: $Black;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.root_inheritColor {
+    color: inherit;
+
+    &:hover {
+        color: inherit;
+    }
+}
+
+.disabled {
+    cursor: default;
+
+    opacity: 0.4;
+
+    &:hover {
+        color: $Grey;
+    }
+}
+
+.icon {
+    width: 14px;
+    margin: 0 auto;
+
+    color: inherit;
+
+    font-size: 14px;
+    line-height: 26px;
+}

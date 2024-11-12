@@ -1,0 +1,48 @@
+@import '../mixins/mixin';
+
+.root {
+    position: relative;
+
+    height: 32px;
+    padding: 10px 26px;
+
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s ease-in;
+
+    border: none;
+    border-radius: 16px;
+    outline: none;
+
+    font-size: 12px;
+
+    &:disabled {
+        cursor: default;
+
+        opacity: 0.5;
+    }
+}
+
+.primary {
+    color: #ffffff;
+    background-color: #a829ff;
+
+    &:hover {
+        background-color: #8e1ed9;
+    }
+
+    &:disabled {
+        &:hover {
+            background-color: #a829ff;
+        }
+    }
+}
+
+.light {
+    color: $FontColor;
+    background-color: transparent;
+
+    &:hover {
+        color: #8e1ed9;
+    }
+}
