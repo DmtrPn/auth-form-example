@@ -3,9 +3,9 @@ import { authService } from '@store/App/service/authService';
 
 export interface UseAuthData {
     errorMessage?: string;
-    email: string;
+    login: string;
     password: string;
-    isPasswordValid: boolean;
+    isReadyForLogin: boolean;
     onLoginClick(): void;
     onLogoutClick(): void;
     onInputChange(e: React.ChangeEvent<HTMLInputElement>): void;
@@ -13,15 +13,16 @@ export interface UseAuthData {
 
 interface LoginData {
     errorMessage?: string;
-    email: string;
+    login: string;
     password: string;
 }
 
 export function useAuth(): UseAuthData {
-    const [loginData, setLoginData] = useState<LoginData>({ email: '', password: '' });
+    const [loginData, setLoginData] = useState<LoginData>({ login: '', password: '' });
     const [errorMessage, setErrorMassage] = useState<string>();
 
     function onInputChange({ target: { value, name } }: React.ChangeEvent<HTMLInputElement>): void {
+        setErrorMassage(undefined);
         setLoginData({
             ...loginData,
             [name]: value,
@@ -29,12 +30,13 @@ export function useAuth(): UseAuthData {
     }
 
     async function onLoginClick(): Promise<void> {
-        const { email, password } = loginData;
+        const { login, password } = loginData;
         setErrorMassage(undefined);
 
-        if (email.length > 1 && password.length > 5) {
+        if (login.length > 1 && password.length) {
+            setErrorMassage('Email or password is incorrect');
             try {
-                await authService.login({ password: password.trim(), email: email.toLocaleLowerCase().trim() });
+                await authService.login({ password: password.trim(), login: login.trim() });
             } catch (e: any) {
                 console.error('Error:', e);
                 setErrorMassage(() => e.message);
@@ -52,6 +54,6 @@ export function useAuth(): UseAuthData {
         onLoginClick,
         errorMessage,
         onLogoutClick,
-        isPasswordValid: loginData.password.length > 5,
+        isReadyForLogin: !errorMessage && loginData.password.length > 0 && loginData.login.length > 0,
     };
 }

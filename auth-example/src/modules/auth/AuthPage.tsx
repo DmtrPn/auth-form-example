@@ -14,7 +14,7 @@ import { useAuth } from './hooks/useAuth';
 
 export interface AuthPageProps {
     errorMessage?: string;
-    email: string;
+    login: string;
     password: string;
     fullName?: string;
     onLoginClick(): void;
@@ -23,7 +23,7 @@ export interface AuthPageProps {
 }
 
 export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
-    const { email, errorMessage, password, isPasswordValid, onInputChange, onLoginClick, onLogoutClick } = useAuth();
+    const { login, errorMessage, password, isReadyForLogin, onInputChange, onLoginClick, onLogoutClick } = useAuth();
     const { fullName } = useAuthUser();
 
     return (
@@ -57,18 +57,17 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 </span>
                             </div>
                         )}
-                        <div className={commonStyle.field}>
+                        <div className={classnames([style.input, commonStyle.field])}>
                             <Input
                                 data-testid={AuthPageDataTestAttributes.EmailInput}
-                                name={'email'}
-                                title={'email'}
-                                type={'email'}
-                                value={email}
+                                name={'login'}
+                                title={'Логин'}
+                                value={login}
                                 onChange={onInputChange}
                                 onKeyDown={e => (e.keyCode === 13 ? onLoginClick() : null)}
                             />
                         </div>
-                        <div className={commonStyle.field}>
+                        <div className={classnames([style.input, commonStyle.field])}>
                             <Input
                                 data-testid={AuthPageDataTestAttributes.PasswordInput}
                                 type={'password'}
@@ -82,7 +81,7 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                         <div className={classnames([commonStyle.field, style.buttons])}>
                             <SaveButton
                                 data-testid={AuthPageDataTestAttributes.SaveButton}
-                                disabled={!isPasswordValid}
+                                disabled={!isReadyForLogin}
                                 label={'Войти'}
                                 onSaveClick={onLoginClick}
                             />

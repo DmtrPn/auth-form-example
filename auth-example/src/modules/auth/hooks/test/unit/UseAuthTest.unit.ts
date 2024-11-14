@@ -9,13 +9,13 @@ export class UseAuthTestUnit extends TestSuit {
     public async useAuthTest(): Promise<void> {
         const {
             result: {
-                current: { password, email, isPasswordValid, errorMessage },
+                current: { password, login, isReadyForLogin, errorMessage },
             },
         } = renderHook<UseAuthData, void>(() => useAuth());
 
         expect(password).toBe('');
-        expect(email).toBe('');
-        expect(isPasswordValid).toBeFalsy();
+        expect(login).toBe('');
+        expect(isReadyForLogin).toBeFalsy();
         expect(errorMessage).toBeUndefined();
     }
 
@@ -50,7 +50,7 @@ export class UseAuthTestUnit extends TestSuit {
             onInputChange({ target: { value: email, name: 'email' } } as unknown as any);
         });
 
-        expect(result.current.email).toBe(email);
+        expect(result.current.login).toBe(email);
     }
 
     @Test('Password validation')
@@ -66,12 +66,12 @@ export class UseAuthTestUnit extends TestSuit {
         act(() => {
             onInputChange({ target: { value: notValidPassword, name: 'password' } } as unknown as any);
         });
-        expect(result.current.isPasswordValid).toBeFalsy();
+        expect(result.current.isReadyForLogin).toBeFalsy();
 
         const validPassword = FakeParams.getWord({ length: 6 });
         act(() => {
             onInputChange({ target: { value: validPassword, name: 'password' } } as unknown as any);
         });
-        expect(result.current.isPasswordValid).toBeTruthy();
+        expect(result.current.isReadyForLogin).toBeTruthy();
     }
 }
