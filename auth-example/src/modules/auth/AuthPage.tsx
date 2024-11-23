@@ -46,7 +46,7 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                     </>
                 ) : (
                     <>
-                        <div className={commonStyle.field}>
+                        <div className={classnames([style.title, commonStyle.field])}>
                             <span className={style.message}>Авторизация</span>
                         </div>
                         {!!errorMessage && (
