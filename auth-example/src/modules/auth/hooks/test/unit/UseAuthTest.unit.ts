@@ -9,13 +9,13 @@ export class UseAuthTestUnit extends TestSuit {
     public async useAuthTest(): Promise<void> {
         const {
             result: {
-                current: { password, login, isReadyForLogin, errorMessage },
+                current: { password, email, isPasswordValid, errorMessage },
             },
         } = renderHook<UseAuthData, void>(() => useAuth());
 
         expect(password).toBe('');
-        expect(login).toBe('');
-        expect(isReadyForLogin).toBeFalsy();
+        expect(email).toBe('');
+        expect(isPasswordValid).toBeFalsy();
         expect(errorMessage).toBeUndefined();
     }
 
@@ -50,7 +50,42 @@ export class UseAuthTestUnit extends TestSuit {
             onInputChange({ target: { value: email, name: 'email' } } as unknown as any);
         });
 
-        expect(result.current.login).toBe(email);
+        expect(result.current.email).toBe(email);
+    }
+
+    @Test('update email test')
+    public async emailValidationTest(): Promise<void> {
+        const {
+            result,
+            result: {
+                current: { onInputChange },
+            },
+        } = renderHook<UseAuthData, void>(() => useAuth());
+
+        const word = FakeParams.getWord();
+        const emailWithoutPath = 'asd@as';
+        const emailWithoutPathWithDot = 'asd@as.';
+        const emailWithoutDomain = 'asd@';
+        act(() => {
+            onInputChange({ target: { value: word, name: 'email' } } as unknown as any);
+        });
+
+        expect(result.current.isEmailValid).toBeFalsy();
+        act(() => {
+            onInputChange({ target: { value: emailWithoutPath, name: 'email' } } as unknown as any);
+        });
+
+        expect(result.current.isEmailValid).toBeFalsy();
+        act(() => {
+            onInputChange({ target: { value: emailWithoutPathWithDot, name: 'email' } } as unknown as any);
+        });
+
+        expect(result.current.isEmailValid).toBeFalsy();
+        act(() => {
+            onInputChange({ target: { value: emailWithoutDomain, name: 'email' } } as unknown as any);
+        });
+
+        expect(result.current.isEmailValid).toBeFalsy();
     }
 
     @Test('Password validation')
@@ -62,16 +97,21 @@ export class UseAuthTestUnit extends TestSuit {
             },
         } = renderHook<UseAuthData, void>(() => useAuth());
 
-        const notValidPassword = FakeParams.getWord({ length: 5 });
+        const email = FakeParams.getEmail();
+        act(() => {
+            onInputChange({ target: { value: email, name: 'email' } } as unknown as any);
+        });
+
+        const notValidPassword = '';
         act(() => {
             onInputChange({ target: { value: notValidPassword, name: 'password' } } as unknown as any);
         });
-        expect(result.current.isReadyForLogin).toBeFalsy();
+        expect(result.current.isPasswordValid).toBeFalsy();
 
-        const validPassword = FakeParams.getWord({ length: 6 });
+        const validPassword = FakeParams.getWord({ length: 1 });
         act(() => {
             onInputChange({ target: { value: validPassword, name: 'password' } } as unknown as any);
         });
-        expect(result.current.isReadyForLogin).toBeTruthy();
+        expect(result.current.isPasswordValid).toBeTruthy();
     }
 }

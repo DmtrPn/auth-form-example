@@ -1,1 +1,684 @@
-body{background-color:#f7f5ff;border:0;font-family:Roboto;font-style:normal;font-weight:400}.core__page__root{color:#0b0b0b;height:100%;position:relative;text-align:center}.core__page__content{display:inline-block;height:100%;margin:0;position:relative;text-align:left;width:auto}.core__page__preloader{align-items:center;background-color:#fff;bottom:0;display:flex;height:100%;justify-content:center;left:0;opacity:.6;position:absolute;right:0;top:0;width:100%}blockquote,body,dd,dl,dt,fieldset,figure,h1,h2,h3,h4,h5,h6,hr,html,iframe,legend,li,ol,p,pre,textarea,ul{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,:after,:before{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:separate;border-spacing:0}td,th{padding:0;text-align:left}html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}.modules__auth__root{align-items:center;background-color:#f4f4f4;color:#4a4a4a;display:flex;flex-direction:column;height:100vh;justify-content:center;width:100vw}.modules__auth__message{font-size:20px}.modules__auth__errorMessage{color:red;font-size:16px}.modules__auth__buttons{display:flex}.modules__auth__input{width:185px}.modules__auth__form{align-items:center;background-color:#fff;border-radius:24px;box-shadow:0 0 20px 2px rgba(0,0,1,.1);display:flex;flex-direction:column;justify-content:space-between;padding:16px;width:300px}@media screen and (max-width:768px){.modules__auth__form{max-width:320px;width:100%}}.components__mixins__field{margin-bottom:16px}.components__mixins__field:last-of-type{margin-bottom:0}.components__mixins__font_title{font-size:16px;line-height:20px}.components__mixins__font_text{font-size:14px;line-height:18px}.components__input__root{position:relative;width:100%}.components__input__root.components__input__active .components__input__input,.components__input__root:hover .components__input__input{border-color:#6b6f85}.components__input__input{border:1px solid #e9e9e9;border-radius:12px;color:#0b0b0b;font-size:inherit;font-style:normal;height:inherit;outline:0;padding:6px 8px;text-align:inherit;text-overflow:ellipsis;width:inherit}.components__input__input::-moz-placeholder{color:#6b6f85}.components__input__input:-ms-input-placeholder{color:#6b6f85}.components__input__input::placeholder{color:#6b6f85}.components__input__input:disabled{box-shadow:none}.components__field-title__field{margin-bottom:16px}.components__field-title__field:last-of-type{margin-bottom:0}.components__field-title__font_title{font-size:16px;line-height:20px}.components__field-title__font_text{font-size:14px;line-height:18px}.components__field-title__root{color:#0b0b0b;font-size:14px;padding-bottom:8px}.components__field-title__disabled{opacity:.5}.components__field-title__withPadding{padding-bottom:8px}.components__field-title__withoutPadding{padding:0}.components__field-title__bold{font-weight:500}.components__field-title__valid{color:#0b0b0b}.components__field-title__notValid{color:#ff3636}.components__field-title__withCaption{width:auto}.components__field-title__clickable{cursor:pointer}.components__field-title__inheritColor{color:inherit}.components__button__root{border:none;border-radius:16px;cursor:pointer;font-size:12px;height:32px;outline:none;padding:10px 26px;position:relative;transition:all .1s ease-in;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.components__button__root:disabled{cursor:default;opacity:.5}.components__button__primary{background-color:#a829ff;color:#fff}.components__button__primary:hover{background-color:#8e1ed9}.components__button__primary:disabled:hover{background-color:#a829ff}.components__button__light{background-color:transparent;color:#0b0b0b}.components__button__light:hover{color:#8e1ed9}
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/core/Page/Page.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************/
+html {
+  box-sizing: border-box;
+}
+
+body {
+  border: 0;
+  background-color: #f7f5ff;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.core__page__root {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  color: #0b0b0b;
+}
+
+.core__page__content {
+  position: relative;
+  display: inline-block;
+  width: initial;
+  height: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.core__page__preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: white;
+}
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/core/Page/reset.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/*! minireset.css v0.0.5 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+td,
+th {
+  padding: 0;
+  text-align: left;
+}
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  margin: 0.67em 0;
+  font-size: 2em;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  overflow: visible;
+  /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */
+  border-bottom: none;
+  /* 1 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  display: table;
+  /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  outline-offset: -2px;
+  /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  font: inherit;
+  /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/modules/auth/AuthPage.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+.modules__auth__root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  color: #4a4a4a;
+  background-color: #f4f4f4;
+}
+
+.modules__auth__message {
+  font-size: 20px;
+}
+
+.modules__auth__errorMessage {
+  color: red;
+  font-size: 16px;
+}
+
+.modules__auth__buttons {
+  display: flex;
+}
+
+.modules__auth__input {
+  width: 185px;
+}
+
+.modules__auth__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+  padding: 16px;
+  border-radius: 24px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 1, 0.1);
+}
+@media screen and (max-width: 768px) {
+  .modules__auth__form {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/mixins/commonStyles.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
+.components__mixins__field {
+  margin-bottom: 16px;
+}
+.components__mixins__field:last-of-type {
+  margin-bottom: 0;
+}
+
+.components__mixins__font_title {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.components__mixins__font_text {
+  font-size: 14px;
+  line-height: 18px;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/Input/Input.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+.components__input__root {
+  position: relative;
+  width: 100%;
+}
+.components__input__root:hover .components__input__input {
+  border-color: #6b6f85;
+}
+.components__input__root.components__input__active .components__input__input {
+  border-color: #6b6f85;
+}
+
+.components__input__input {
+  width: inherit;
+  height: inherit;
+  padding: 6px 8px;
+  text-align: inherit;
+  text-overflow: ellipsis;
+  color: #0b0b0b;
+  border: 1px solid #e9e9e9;
+  border-radius: 12px;
+  outline: 0;
+  font-size: inherit;
+  font-style: normal;
+}
+.components__input__input::-moz-placeholder {
+  color: #6b6f85;
+}
+.components__input__input:-ms-input-placeholder {
+  color: #6b6f85;
+}
+.components__input__input::placeholder {
+  color: #6b6f85;
+}
+
+.components__input__input:disabled {
+  box-shadow: none;
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/FieldTitle/FieldTitle.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************/
+.components__field-title__field {
+  margin-bottom: 16px;
+}
+.components__field-title__field:last-of-type {
+  margin-bottom: 0;
+}
+
+.components__field-title__font_title {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.components__field-title__font_text {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.components__field-title__root {
+  padding-bottom: 8px;
+  color: #0b0b0b;
+  font-size: 14px;
+}
+
+.components__field-title__disabled {
+  opacity: 0.5;
+}
+
+.components__field-title__withPadding {
+  padding-bottom: 8px;
+}
+
+.components__field-title__withoutPadding {
+  padding: 0;
+}
+
+.components__field-title__bold {
+  font-weight: 500;
+}
+
+.components__field-title__valid {
+  color: #0b0b0b;
+}
+
+.components__field-title__notValid {
+  color: #ff3636;
+}
+
+.components__field-title__withCaption {
+  width: auto;
+}
+
+.components__field-title__clickable {
+  cursor: pointer;
+}
+
+.components__field-title__inheritColor {
+  color: inherit;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[1].use[3]!./src/components/Button/Button.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+.components__button__root {
+  position: relative;
+  height: 32px;
+  padding: 10px 26px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  transition: all 0.1s ease-in;
+  border: none;
+  border-radius: 16px;
+  outline: none;
+  font-size: 12px;
+}
+.components__button__root:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.components__button__primary {
+  color: #ffffff;
+  background-color: #a829ff;
+}
+.components__button__primary:hover {
+  background-color: #8e1ed9;
+}
+.components__button__primary:disabled:hover {
+  background-color: #a829ff;
+}
+
+.components__button__light {
+  color: #0b0b0b;
+  background-color: transparent;
+}
+.components__button__light:hover {
+  color: #8e1ed9;
+}
+
+/*# sourceMappingURL=styles.css.map*/

@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { authService } from '@store/App/service/authService';
+import { validateEmail } from '@utils/Validation';
 
 export interface UseAuthData {
     errorMessage?: string;
-    login: string;
+    email: string;
     password: string;
-    isReadyForLogin: boolean;
+    isPasswordValid: boolean;
+    isEmailValid: boolean;
     onLoginClick(): void;
     onLogoutClick(): void;
     onInputChange(e: React.ChangeEvent<HTMLInputElement>): void;
@@ -13,12 +15,12 @@ export interface UseAuthData {
 
 interface LoginData {
     errorMessage?: string;
-    login: string;
+    email: string;
     password: string;
 }
 
 export function useAuth(): UseAuthData {
-    const [loginData, setLoginData] = useState<LoginData>({ login: '', password: '' });
+    const [loginData, setLoginData] = useState<LoginData>({ email: '', password: '' });
     const [errorMessage, setErrorMassage] = useState<string>();
 
     function onInputChange({ target: { value, name } }: React.ChangeEvent<HTMLInputElement>): void {
@@ -30,13 +32,13 @@ export function useAuth(): UseAuthData {
     }
 
     async function onLoginClick(): Promise<void> {
-        const { login, password } = loginData;
+        const { email, password } = loginData;
         setErrorMassage(undefined);
 
-        if (login.length > 1 && password.length) {
+        if (email.length > 1 && password.length) {
             setErrorMassage('Email or password is incorrect');
             try {
-                await authService.login({ password: password.trim(), login: login.trim() });
+                await authService.login({ password: password.trim(), login: email.trim() });
             } catch (e: any) {
                 console.error('Error:', e);
                 setErrorMassage(() => e.message);
@@ -54,6 +56,7 @@ export function useAuth(): UseAuthData {
         onLoginClick,
         errorMessage,
         onLogoutClick,
-        isReadyForLogin: !errorMessage && loginData.password.length > 0 && loginData.login.length > 0,
+        isEmailValid: validateEmail(loginData.email),
+        isPasswordValid: loginData.password.length > 0,
     };
 }
