@@ -11,6 +11,7 @@ import { useAuthUser } from '@store/App/hooks/useAuthUser';
 import { AuthPageDataTestAttributes } from './dataTestAttributes';
 
 import { useAuth } from './hooks/useAuth';
+import { PasswordInput } from '@components/Input/PassworInput';
 
 export interface AuthPageProps {
     errorMessage?: string;
@@ -23,7 +24,8 @@ export interface AuthPageProps {
 }
 
 export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
-    const { email, errorMessage, password, isPasswordValid, onInputChange, onLoginClick, onLogoutClick } = useAuth();
+    const { email, errorMessage, isEmailValid, password, isPasswordValid, onInputChange, onLoginClick, onLogoutClick } =
+        useAuth();
     const { fullName } = useAuthUser();
 
     return (
@@ -65,13 +67,13 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 autoComplete={'on'}
                                 value={email}
                                 onChange={onInputChange}
+                                isValid={email.length > 0 ? isEmailValid : undefined}
                                 onKeyDown={e => (e.keyCode === 13 ? onLoginClick() : null)}
                             />
                         </div>
                         <div className={classnames([style.input, commonStyle.field])}>
-                            <Input
+                            <PasswordInput
                                 data-testid={AuthPageDataTestAttributes.PasswordInput}
-                                type={'password'}
                                 name={'password'}
                                 autoComplete={'current-password'}
                                 title={'Пароль'}
@@ -83,7 +85,7 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                         <div className={classnames([commonStyle.field, style.buttons])}>
                             <SaveButton
                                 data-testid={AuthPageDataTestAttributes.SaveButton}
-                                disabled={!isPasswordValid}
+                                disabled={!isPasswordValid || !isEmailValid || (errorMessage || '').length > 0}
                                 label={'Войти'}
                                 onSaveClick={onLoginClick}
                             />

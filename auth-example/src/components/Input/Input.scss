@@ -18,6 +18,25 @@
     }
 }
 
+.root_withIcon {
+    position: relative;
+    .input {
+        padding-right: 16px;
+    }
+}
+
+.icon {
+    position: absolute;
+    right: 8px;
+    bottom: 2px;
+
+    cursor: pointer;
+
+    color: $Grey;
+
+    font-size: 18px;
+}
+
 .input {
     width: inherit;
     height: inherit;
@@ -36,6 +55,12 @@
 
     &::placeholder {
         color: $Grey;
+    }
+}
+
+.notValid {
+    .input {
+        border-color: $Red;
     }
 }
 
