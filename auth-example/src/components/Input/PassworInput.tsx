@@ -13,12 +13,20 @@ export const InputModifier = {};
 export function PasswordInput(props: Props): JSX.Element {
     const [isShown, setIsShown] = useState(false);
 
+    const ariaLabel = isShown ? 'Скрыть пароль' : 'Показать пароль';
+
     return (
         <div className={classnames([style.root_withIcon])}>
             <WithHOCInputContainer type={isShown ? 'text' : 'password'} {...props} />
-            <div className={style.icon} onClick={() => setIsShown(!isShown)}>
+            <button
+                type="button"
+                className={style.icon}
+                onClick={() => setIsShown(!isShown)}
+                aria-label={ariaLabel}
+                aria-pressed={isShown}
+            >
                 <Icon type={isShown ? IconType.EYE : IconType.EYE_CLOSE} />
-            </div>
+            </button>
         </div>
     );
 }

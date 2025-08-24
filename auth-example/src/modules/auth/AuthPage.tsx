@@ -28,6 +28,11 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
         useAuth();
     const { fullName } = useAuthUser();
 
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        onLoginClick();
+    };
+
     return (
         <div className={style.root} data-testid={AuthPageDataTestAttributes.Root}>
             <div className={style.form}>
@@ -41,11 +46,12 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 data-testid={AuthPageDataTestAttributes.SaveButton}
                                 label={'Выйти'}
                                 onSaveClick={onLogoutClick}
+                                type="button"
                             />
                         </div>
                     </>
                 ) : (
-                    <>
+                    <form onSubmit={handleSubmit}>
                         <div className={classnames([style.title, commonStyle.field])}>
                             <span className={style.message}>Авторизация</span>
                         </div>
@@ -64,11 +70,11 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 data-testid={AuthPageDataTestAttributes.EmailInput}
                                 name={'email'}
                                 title={'Email'}
-                                autoComplete={'on'}
+                                type={'email'}
+                                autoComplete={'email'}
                                 value={email}
                                 onChange={onInputChange}
                                 isValid={email.length > 0 ? isEmailValid : undefined}
-                                onKeyDown={e => (e.keyCode === 13 ? onLoginClick() : null)}
                             />
                         </div>
                         <div className={classnames([style.input, commonStyle.field])}>
@@ -79,7 +85,6 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 title={'Пароль'}
                                 value={password}
                                 onChange={onInputChange}
-                                onKeyDown={e => (e.keyCode === 13 ? onLoginClick() : null)}
                             />
                         </div>
                         <div className={classnames([commonStyle.field, style.buttons])}>
@@ -87,10 +92,9 @@ export const AuthPage = observer(({}: AuthPageProps): JSX.Element => {
                                 data-testid={AuthPageDataTestAttributes.SaveButton}
                                 disabled={!isPasswordValid || !isEmailValid || (errorMessage || '').length > 0}
                                 label={'Войти'}
-                                onSaveClick={onLoginClick}
                             />
                         </div>
-                    </>
+                    </form>
                 )}
             </div>
         </div>
